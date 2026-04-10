@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ChevronLeft, Linkedin } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { blogs } from '../data/blogsData';
 
 export default function BlogPost() {
@@ -17,6 +18,14 @@ export default function BlogPost() {
 
   return (
     <main className="pt-32 pb-24 bg-slate-50 min-h-screen">
+      <Helmet>
+        <title>{blog.title} | Dr. Nitin Naikwade</title>
+        <meta name="description" content={blog.meta} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.meta} />
+        <meta property="og:image" content={blog.image} />
+        <link rel="canonical" href={`https://drnitinnaikwade.netlify.app/blog/${blog.id}`} />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/#blogs" className="inline-flex items-center text-sky-600 hover:text-sky-700 font-medium mb-8 transition-colors">
           <ChevronLeft className="w-5 h-5 mr-1" />

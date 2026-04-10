@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
@@ -12,6 +13,11 @@ import SectionTransition from '../components/SectionTransition';
 export default function Home() {
   return (
     <main>
+      <Helmet>
+        <title>Dr. Nitin Naikwade | Best Neurosurgeon in Mumbai</title>
+        <meta name="description" content="Expert Consultant Neurosurgeon & Neuro-Interventionist in Mumbai. Specializing in brain, spine, and endovascular neurosurgery." />
+        <link rel="canonical" href="https://drnitinnaikwade.netlify.app/" />
+      </Helmet>
       <Hero />
       <SectionTransition>
         <About />
